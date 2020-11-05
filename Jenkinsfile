@@ -11,10 +11,11 @@ pipeline{
 				sh "docker-compose up flightsearch search"
 			}
 		}
-		stage("Bring grid down"){
-			steps{
+}		
+		post{
+			always{
+				archiveArtifacts archiveArtifacts: 'output/**'
 				sh "docker-compose down"
 			}
 		}
 	}
-}

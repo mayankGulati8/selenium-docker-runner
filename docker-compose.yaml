@@ -27,7 +27,7 @@ services:
       - HUB_HOST=hub
       - MODULE=testng.xml
     volumes:
-      - ./test-output-flight:/usr/share/udemy/test-output
+      - ./output/test-output-flight:/usr/share/udemy/test-output
   search:
     image: 888777666/selenium-docker
     depends_on:
@@ -38,4 +38,4 @@ services:
       - BROWSER=firefox
       - MODULE=testngduck.xml
     volumes:
-      - ./test-output-search:/usr/share/udemy/test-output    
+      - ./output/test-output-search:/usr/share/udemy/test-output    
